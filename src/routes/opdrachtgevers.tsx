@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { SectorsGrid } from "@/components/sections/SectorsGrid";
+import { ClientLogosMarquee } from "@/components/sections/ClientLogosMarquee";
 import { ContactCta } from "@/components/sections/ContactCta";
 
 export const Route = createFileRoute("/opdrachtgevers")({
@@ -28,6 +29,7 @@ function OpdrachtgeversPage() {
         as="h1"
         description="Wij adviseren toonaangevende organisaties die in complexe ketens werken aan grote bouw-, vastgoed- en maatschappelijke opgaven — van strategische vraagstukken op directieniveau tot ketenregie in de uitvoering."
       />
+      <ClientLogosMarquee />
 
       <ContactCta />
     </SiteShell>
