@@ -118,32 +118,47 @@ export function NextEventWidget() {
   return (
     <section id="eerstvolgende-bijeenkomst" className="relative border-y border-hairline bg-white">
       <div className="container-x py-6">
-        <div className="flex flex-col gap-5 rounded-lg border border-hairline bg-surface p-6 md:flex-row md:items-start">
-          <div className="flex items-start gap-3 md:w-64 md:shrink-0">
-            <CalendarClock className="mt-0.5 h-5 w-5 shrink-0 text-orange" aria-hidden />
-            <div>
-              <div className="text-xs font-semibold uppercase tracking-[0.16em] text-orange">
-                Eerstvolgende bijeenkomst
-              </div>
-              <div className="mt-1 font-display text-lg font-semibold text-navy-deep">
-                {nextDate}
-              </div>
-              <div className="mt-1 flex items-center gap-1.5 text-xs text-slate-soft">
-                <MapPin className="h-3.5 w-3.5 shrink-0" aria-hidden />
-                Kasteel de Vanenburg, Putten
+        <div className="rounded-lg border border-hairline bg-surface p-6">
+          <h2 className="font-display text-2xl font-semibold text-navy-deep md:text-3xl">
+            Uw kennis vergroten rondom Ketensamenwerking? Word dan platform lid!
+          </h2>
+
+          <div className="mt-5 flex flex-col gap-5 md:flex-row md:items-start">
+            <div className="flex items-start gap-3 md:w-64 md:shrink-0">
+              <CalendarClock className="mt-0.5 h-5 w-5 shrink-0 text-orange" aria-hidden />
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-[0.16em] text-orange">
+                  Eerstvolgende bijeenkomst
+                </div>
+                <div className="mt-1 font-display text-lg font-semibold text-navy-deep">
+                  {nextDate}
+                </div>
+                <div className="mt-1 flex items-center gap-1.5 text-xs text-slate-soft">
+                  <MapPin className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                  Kasteel de Vanenburg, Putten
+                </div>
+                <a
+                  href="https://platform-ketensamenwerking.nl/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 rounded-md bg-orange px-4 py-2.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-orange/90"
+                >
+                  Bekijk onze platform website
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                </a>
               </div>
             </div>
-          </div>
 
-          <div className="grid flex-1 gap-3 sm:grid-cols-2">
-            {sessions.map((s) => (
-              <EventSessionCard
-                key={`${s.platform}-${s.nummer}`}
-                session={s}
-                expanded={expanded}
-                onToggle={() => setExpanded((v) => !v)}
-              />
-            ))}
+            <div className="grid flex-1 gap-3 sm:grid-cols-2">
+              {sessions.map((s) => (
+                <EventSessionCard
+                  key={`${s.platform}-${s.nummer}`}
+                  session={s}
+                  expanded={expanded}
+                  onToggle={() => setExpanded((v) => !v)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
